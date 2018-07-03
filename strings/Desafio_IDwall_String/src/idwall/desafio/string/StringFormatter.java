@@ -21,5 +21,5 @@ public abstract class StringFormatter {
      * @return
      */
     public abstract String format(String text, int limit);
-    
+   
  }

@@ -33,14 +33,14 @@ public class IdwallFormatter extends StringFormatter {
 			while (scanAux.hasNext()) {
 				word = scanAux.next();
 				if ((line.length() + word.length()) > limit) {
-					textFormatted.append(line.toString().trim() +"\n");
+					textFormatted.append(line.toString().trim()).append("\n");
 					line.setLength(0);
-					line.append(word + " ");
+					line.append(word).append(" ");
 				} else {
-					line.append(word + " ");
+					line.append(word).append(" ");
 				}				
 			}			
-			textFormatted.append(line.toString().trim() + "\n");
+			textFormatted.append(line.toString().trim()).append("\n");
 			line.setLength(0);
 			scanAux.close();
 		}
@@ -48,5 +48,5 @@ public class IdwallFormatter extends StringFormatter {
 		scanMain.close();		
 
 		return textFormatted.toString();
-	}
+	}	
 }

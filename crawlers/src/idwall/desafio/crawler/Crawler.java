@@ -20,9 +20,20 @@ public class Crawler {
 	private final String urlMain = "https://old.reddit.com/r/";
 	private final String urlTopDay = "/top/?t=day";
 
-	public static Subreddit subreddit = new Subreddit();
+	private Subreddit subreddit = new Subreddit();
 
-	public void search(String reddit, int topday) {
+	
+		
+	 /**
+     * Receives a string containing subreddits separated by ";" and a minimum upvote limit
+     * the method will populate a threaded list of each subreddit informed.
+     * To recover use getSubreddit()
+     *      
+     * @param subreddit 
+     * @param topday  
+     * 
+     */
+	public void search(String subreddit, int topday) {
 		Thread thread;
 
 		String subredditTitle;
@@ -31,7 +42,7 @@ public class Crawler {
 		String url;
 		String comments;
 
-		String[] link = reddit.split(";");
+		String[] link = subreddit.split(";");
 
 		try {
 			for (int i = 0; i < link.length; i++) {
@@ -56,7 +67,7 @@ public class Crawler {
 							comments = eComments.attr("href");
 
 							thread = new Thread(subredditTitle, title, upvotes, url, comments);
-							subreddit.add(thread);
+							this.subreddit.add(thread);
 						}
 					}
 				}
@@ -68,6 +79,12 @@ public class Crawler {
 			exc.printStackTrace();
 		}
 
+	}
+
+
+
+	public Subreddit getSubreddit() {
+		return subreddit;
 	}
 	
 	

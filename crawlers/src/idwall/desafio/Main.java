@@ -1,11 +1,12 @@
 package idwall.desafio;
 
 import idwall.desafio.crawler.Crawler;
+import idwall.desafio.crawler.Subreddit;
 
 public class Main {
 
 	private static final Integer TOPDAY = 5000;
-	private static final String SUBREDDITS = "brazil;funny;worldnews";
+	private static final String SUBREDDITS = "dog;cat;funny;worldnews";
 
 	public static void main(String[] args) {
 		int topday = TOPDAY;
@@ -22,10 +23,9 @@ public class Main {
 		}
 		
 		Crawler rastrear = new Crawler();
-
 		rastrear.search(subreddit, topday);
-
-		System.out.println(Crawler.subreddit.printAll());
+		
+		Subreddit sr = rastrear.getSubreddit();
+		System.out.println(sr.printAll(topday));
 	}
-
 }

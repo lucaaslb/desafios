@@ -20,13 +20,17 @@ public class Subreddit {
 	}
 
 	
-	public String printAll(){
+	public String printAll(int top){		
 		
 		StringBuffer print = new StringBuffer(); 
-		
-		for (Thread reddit: threads){
-			print.append(reddit.toString());
-		}				
+		if (!this.isEmpty()) {
+			for (Thread reddit: threads){
+				print.append(reddit.toString());
+			}
+		} else {
+			print.append("Não foi encontrado threads com pontuação maior ou igual a " + top + " na subreddit informada");
+		}
+						
 		return print.toString();		
 	}
 	

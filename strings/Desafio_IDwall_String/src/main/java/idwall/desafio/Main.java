@@ -4,7 +4,7 @@ import idwall.desafio.string.IdwallFormatter;
 import idwall.desafio.string.StringFormatter;
 
 /**
- * Created by Rodrigo Cat√£o Araujo on 06/02/2018.
+ * Created by Rodrigo Cat„o Araujo on 06/02/2018.
  */
 public class Main {
 

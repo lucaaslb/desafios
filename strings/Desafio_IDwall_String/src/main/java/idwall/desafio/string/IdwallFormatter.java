@@ -2,12 +2,6 @@ package idwall.desafio.string;
 
 import java.util.Scanner;
 
-/**
- * Created by Rodrigo Catão Araujo on 06/02/2018.
- * 
- * Edit by Lucas Lacerda (@lucaaslb) on 2018-06-30 
- */
-
 public class IdwallFormatter extends StringFormatter {
 
 	/**
@@ -23,7 +17,7 @@ public class IdwallFormatter extends StringFormatter {
 		StringBuffer textFormatted = new StringBuffer();
 		Scanner scanMain = new Scanner(text);
 		Scanner scanAux;
-		
+
 		String word = new String();
 		StringBuffer line = new StringBuffer();
 
@@ -38,15 +32,16 @@ public class IdwallFormatter extends StringFormatter {
 					line.append(word).append(" ");
 				} else {
 					line.append(word).append(" ");
-				}				
-			}			
+				}
+			}
 			textFormatted.append(line.toString().trim()).append("\n");
 			line.setLength(0);
 			scanAux.close();
 		}
-		
-		scanMain.close();		
+
+		scanMain.close();
 
 		return textFormatted.toString();
-	}	
+	}
+
 }
